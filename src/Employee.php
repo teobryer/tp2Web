@@ -78,9 +78,7 @@ class Employee implements IEmployee {
         $this->age = $age;
     }
     
-    function __destruct(){
-        
-    }
+    
     
     function __toString(){
         $t=get_object_vars($this);
