@@ -1,5 +1,7 @@
 <?php 
 
+require ("IEmployee.php");
+
 class Employee implements IEmployee {
     
     private $id;
@@ -10,7 +12,7 @@ class Employee implements IEmployee {
     /**
      * @return mixed
      */
-    public function getId()
+    public function getId():int
     {
         return $this->id;
     }
@@ -18,7 +20,7 @@ class Employee implements IEmployee {
     /**
      * @return mixed
      */
-    public function getName()
+    public function getName():string
     {
         return $this->name;
     }
@@ -26,7 +28,7 @@ class Employee implements IEmployee {
     /**
      * @return mixed
      */
-    public function getSalary()
+    public function getSalary():float
     {
         return $this->salary;
     }
@@ -34,7 +36,7 @@ class Employee implements IEmployee {
     /**
      * @return mixed
      */
-    public function getAge()
+    public function getAge():int
     {
         return $this->age;
     }
@@ -42,7 +44,7 @@ class Employee implements IEmployee {
     /**
      * @param mixed $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -50,7 +52,7 @@ class Employee implements IEmployee {
     /**
      * @param mixed $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -58,7 +60,7 @@ class Employee implements IEmployee {
     /**
      * @param mixed $salary
      */
-    public function setSalary($salary)
+    public function setSalary(float $salary)
     {
         $this->salary = $salary;
     }
@@ -66,7 +68,7 @@ class Employee implements IEmployee {
     /**
      * @param mixed $age
      */
-    public function setAge($age)
+    public function setAge(int $age)
     {
         $this->age = $age;
     }
@@ -80,7 +82,7 @@ class Employee implements IEmployee {
     
     
     
-    function __toString(){
+    function __toString(): string{
         $t=get_object_vars($this);
         $s="";
         foreach($t as $key=>$value)$s.="$key = $value\n";
