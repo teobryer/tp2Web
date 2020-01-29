@@ -19,8 +19,8 @@ echo "<!DOCTYPE html>
 <script src=".'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'." integrity=".'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'." crossorigin=".'anonymous'."></script>
 </head>
 <body>
-<h1>employee_display.php</h1>";
-
+<h1>employee_display.php</h1>
+<h2>avant augmentation</h2>";
 
 function afficherTab($array){
 
@@ -54,6 +54,18 @@ echo " <p> Le salaire moyen des $compteur employés précédent est de ".$total_
 
 echo afficherTab($array); 
 
+function employeeRaise($employee){
+    if ($employee instanceof Employee){
+        $employee->setSalary($employee->getSalary()*1.05);
+    }
+}
+
+foreach ($array as $employee){
+    employeeRaise($employee);
+}
+
+echo "<h2>après augmentation</h2>";
+afficherTab($array);
 echo "
 </body>
 </html>";
